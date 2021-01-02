@@ -1,0 +1,18 @@
+{% extends 'food/base.html' %}
+{% load static %}
+<html>
+<html lang="en">
+<script src="{% static 'delete_base.js' %}"></script>
+<body>
+{% block body %}
+<form>
+
+    <lable> Enter the id of product which you want to delete </lable><br>
+    <input type="text" id="id"></input>
+    <button class="btn btn-danger" onclick="ret_id()">Submit</button><br>
+
+</form>
+{% endblock %}
+</body>
+</html>
+

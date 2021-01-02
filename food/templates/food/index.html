@@ -1,0 +1,31 @@
+{% extends 'food/base.html' %}
+<html>
+        <head>
+        </head>
+
+         <body>
+
+         {% block body %}
+         <div style="margin-left:50px">
+         <div class="d-flex align-content-stretch flex-wrap" >
+         {% for item in item_name %}
+
+  <div class="p-2 bd-highlight" style="padding:20px">
+
+      <ul class="list-inline">
+                        <li class="list-inline-item">
+                            <a href="/food/{{item.id}}"><img href="/food/{{item.id}}" class="card" height="150px" src="{{ item.item_img }}"></img></a>
+                    <h4><a href="/food/{{item.id}}">{{ item.id }}-->{{ item.item_name }}</a></h4>
+                        </li>
+                </ul>
+
+  </div>
+             {% endfor %}
+             </div>
+         </div>
+             {% endblock %}
+
+
+
+    </body>
+</html>

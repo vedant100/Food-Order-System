@@ -1,0 +1,31 @@
+{% load static %}
+<html>
+    <head>
+         <link rel="stylesheet" type="text/css"  href="{% static 'style.css' %}"/>
+         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous"></link>
+    </head>
+    <body>
+
+            <nav class="navbar navbar-dark bg-dark">
+                <a href="#" class="navbar-brand"><img src="https://st.depositphotos.com/2926881/3774/v/950/depositphotos_37748769-stock-illustration-pizza-chef-logo.jpg" class="card" height="50px" width="50px"> </img> </a>
+                <a href="#" class="navbar-brand" ><h1>Delicious FoodApp</h1></a>
+                <div class="navbar">
+                    <a class="nav-item nav-link" href="/food/add"> Add Item </a>
+                    <a class="nav-item nav-link" href="/food/delete_temp"> Delete Item </a>
+                    <a class="nav-item nav-link" href="#"> Purchase Item </a>
+                    {% if user.is_authenticated %}
+                        <a class="nav-item nav-link" href="{% url 'profile' %}"> Profile </a>
+
+                        <a class="nav-item nav-link" href="{% url 'logout' %}"> Logout </a>
+                    {% else %}
+                        <a class="nav-item nav-link" href="{% url 'login' %}"> Login </a>
+                    {% endif %}
+                </div>
+            </nav>
+            <h4 style="padding-top:20px"><marquee  height="40px" behavior="scroll" direction="left" onmouseover="this.stop();" onmouseout="this.start();">Special Navratri offer --> Free Home Delivery <-- Hurry Up .... Limited time offer | Special Navratri offer --> Free Home Delivery <-- Hurry Up .... Limited time offer </marquee></h4>
+
+    {% block body %}
+    {% endblock %}
+
+    </body>
+</html>
