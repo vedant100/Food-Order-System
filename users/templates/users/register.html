@@ -1,6 +1,27 @@
-<form method="POST">
+{% load static %}
+<html>
 
-    {% csrf_token %}
-    {{ form }}
-    <button type="submit">Signup</button>
-</form>
+
+    <body>
+<head>
+         <link rel="stylesheet" type="text/css"  href="{% static 'style.css' %}"/>
+         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous"></link>
+</head>
+
+
+            <nav class="navbar navbar-dark bg-dark">
+                <a href="#" class="navbar-brand"><img src="https://st.depositphotos.com/2926881/3774/v/950/depositphotos_37748769-stock-illustration-pizza-chef-logo.jpg" class="card" height="50px" width="50px"> </img> </a>
+                <a href="#" class="navbar-brand" ><h1>Delicious FoodApp</h1></a>
+            </nav>
+            <h4 style="padding-top:20px"><marquee  height="40px" behavior="scroll" direction="left" onmouseover="this.stop();" onmouseout="this.start();">Special Navratri offer --> Free Home Delivery <-- Hurry Up .... Limited time offer | Special Navratri offer --> Free Home Delivery <-- Hurry Up .... Limited time offer </marquee></h4>
+
+
+
+    <form method="POST">
+
+        {% csrf_token %}
+        {{ form }}
+        <button class="btn btn-info" type="submit">Signup</button>
+    </form>
+    </body>
+</html>
