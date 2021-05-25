@@ -1,7 +1,7 @@
 {% extends 'food/base.html' %}
 <html>
     <head>
-
+    <style> .p{padding-bottom:5px;} </style>
     </head>
     <body>
         {% block body %}
@@ -13,14 +13,14 @@
 
             </div>
 
-                <div class="col-md-6">
+                <div class="col-md-6" style="padding-left:100px;">
 
-                    <h1>{{item.item_name}}</h1>
-                    <h1>{{item.item_desc}}</h1>
-                    <h1>{{item.user_name}}</h1>
-                    <h1>&#x20b9;{{item.item_price}}</h1>
+                    <h1 id="p">{{item.item_name}}</h1>
+                    <h1 id="p">{{item.item_desc}}</h1>
+                    <h1 id="p">{{item.user_name}}</h1>
+                    <h1 id="p">&#x20b9;{{item.item_price}}</h1>
                     <a class="btn btn-danger" href="/food/update/{{item.id}}">Edit</a>
-                    <a class="btn btn-danger" href="/food/delete/{{item.id}}">Delete</a>
+                    <a class="btn btn-danger"  href="/food/delete/{{item.id}}">Delete</a>
 
                 </div>
             </div>

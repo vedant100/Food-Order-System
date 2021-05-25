@@ -9,15 +9,29 @@
 </head>
 
 
-            <nav class="navbar navbar-dark bg-dark">
+              <nav class="navbar navbar-dark bg-dark">
                 <a href="#" class="navbar-brand"><img src="https://st.depositphotos.com/2926881/3774/v/950/depositphotos_37748769-stock-illustration-pizza-chef-logo.jpg" class="card" height="50px" width="50px"> </img> </a>
-                <a href="#" class="navbar-brand"><h1>Delicious FoodApp</h1></a>
+                <a href="#" class="navbar-brand" ><h1>Delicious FoodApp</h1></a>
+                <div class="navbar">
+                    <a class="nav-item nav-link" href="/food/add"> Add Item </a>
+                    <a class="nav-item nav-link" href="/food/delete_temp"> Delete Item </a>
+                    <a class="nav-item nav-link" href="#"> Purchase Item </a>
+                    {% if user.is_authenticated %}
+                        <a class="nav-item nav-link" href="{% url 'profile' %}"> Profile </a>
+
+                        <a class="nav-item nav-link" href="{% url 'logout' %}"> Logout </a>
+                    {% else %}
+                        <a class="nav-item nav-link" href="{% url 'login' %}"> Login </a>
+                    {% endif %}
+                </div>
             </nav>
-            <h4 style="padding-top:20px"><marquee  height="40px" behavior="scroll" direction="left" onmouseover="this.stop();" onmouseout="this.start();">Special Navratri offer --> Free Home Delivery <-- Hurry Up .... Limited time offer | Special Navratri offer --> Free Home Delivery <-- Hurry Up .... Limited time offer </marquee></h4>
+
+
+            <h4 style="padding-top:20px"><marquee height="40px" behavior="scroll" direction="left" onmouseover="this.stop();" onmouseout="this.start();">Special Navratri offer --> Free Home Delivery <-- Hurry Up .... Limited time offer | Special Navratri offer --> Free Home Delivery <-- Hurry Up .... Limited time offer </marquee></h4>
                 <div class="container">
                     <div class="row">
                         <div class="col-md-4 offset-md-4">
-                            <div class="card-header text-white bg-info">
+                            <div class="card-header text-white bg-secondary">
                                 <div class="card-tittle">
                                     Log in
                                 </div>
@@ -32,8 +46,12 @@
                                     </div>
                                     {% endfor %}
                                     <div class="offset-md-4">
-                                        <button class="btn btn-info" type="submit">LogIn</button>
-                                        <a class="btn btn-info" href="/register/">SignIn</a>
+                                        <button class="btn btn-secondary" type="submit">Log In</button>
+                                    </div>
+                                    <div style="padding-top:10px";>
+                                        <a style="padding-left:60px;font-size:14px">Don't have an account ?</a>
+                                        <a style="padding-left:105px;font-size:16px" href="/register/">Sign Up</a>
+                                        <a style="padding-left:3px;font-size:14px">now ! </a>
                                     </div>
                                 </form>
                             </div>

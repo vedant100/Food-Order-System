@@ -7,17 +7,19 @@
 
          {% block body %}
          <div style="margin-left:50px">
-         <div class="d-flex align-content-stretch flex-wrap" >
+         <div class="d-flex align-content-stretch flex-wrap">
+
          {% for item in item_name %}
 
   <div class="p-2 bd-highlight" style="padding:20px">
 
       <ul class="list-inline">
                         <li class="list-inline-item">
-                            <a href="/food/{{item.id}}"><img href="/food/{{item.id}}" class="card" height="150px" src="{{ item.item_img }}"></img></a>
-                    <h4><a href="/food/{{item.id}}">{{ item.id }}-->{{ item.item_name }}</a></h4>
+                            <a href="/food/{{item.id}}"><img href="/food/{{item.id}}" class="card" height="200px" width="300px"  src="{{ item.item_img }}"></img></a>
+                            <div style="padding: 10px 80px;"><h4>{{item.item_name}}</h4></div>
+                            <form action="/food/{{item.id}}"><button class="btn btn-outline-dark" style="padding: 12px 100px;"> View Details </button> </form>
                         </li>
-                </ul>
+      </ul>
 
   </div>
              {% endfor %}

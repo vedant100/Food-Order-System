@@ -82,7 +82,7 @@ def delete_item(request,id):
         item.delete()
         return redirect('/food/')
 
-    return render(request, 'food/delete_item.html', {'item':item})
+    return render(request, 'food/delete_item.html', {'item': item})
 
 def delete_base(request):
     return render(request, 'food/delete_temp.html')
