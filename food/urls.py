@@ -14,7 +14,7 @@ urlpatterns = [
     path('delete_temp/', views.delete_base, name='delete_temp'),
 ]
 
-
+#ok
 urlpatterns += [
     # ... the rest of your URLconf goes here ...
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
